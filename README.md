@@ -8,11 +8,11 @@ Utilises a pretrained BERT-cased model to predict sentiment (negative, neutral, 
 
 ## Project check-list 
 - [x] init project using pyenv, poetry
+- [ ] SQLite & object related mapping
+- [ ] jQuery post to db
+- [ ] 
+- [ ] 
 - [ ] init BertModel
-- [ ] init sqlite
-- [ ] 
-- [ ] 
-- [ ] 
 
 ## Local
 Clone this repo to your desktop and run `_______` to install all the dependencies.
