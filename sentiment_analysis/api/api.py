@@ -26,9 +26,9 @@ def get_db():
 
 
 # Pydantic classes
-class PhraseRequest(BaseModel):
+class PhraseResponse(BaseModel):
     phrase: str
-    #    probabilities: Dict[str, float]
+    # probabilities: Dict[str, float]
     # sentiment: str
     # confidence: float
 
@@ -51,7 +51,9 @@ def predict_phrase_sentiment(id: int):
     db = SessionLocal()
     phrase = db.query(Phrases).filter(Phrases.id == id).first()
 
-    phrase.sentiment = "positive"
+    phrase.sentiment = (
+        "positive"  ### < throw classification predict here (use huggingface.py)
+    )
     db.add(phrase)
     db.commit()
 
@@ -77,7 +79,7 @@ def dashboard(
 
 @app.post("/phrase")
 def create_phrase(
-    phrase_request: PhraseRequest,
+    phrase_request: PhraseResponse,
     background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
 ):
