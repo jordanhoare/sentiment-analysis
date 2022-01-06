@@ -1,4 +1,4 @@
-"""SETTINGS HANDLER
+"""
 Declaration of the Settings class and instance that can be used to get any setting required,
 using dotenv-settings-handler and python-dotenv.
 """
