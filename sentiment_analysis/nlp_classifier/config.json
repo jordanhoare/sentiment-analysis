@@ -1,0 +1,10 @@
+{
+    "BERT_MODEL": "bert-base-cased",
+    "PRE_TRAINED_MODEL": "D:/CompSci/Projects/sentiment-analysis/.bin/pretrained_model.bin",
+    "CLASS_NAMES": [
+        "negative",
+        "neutral",
+        "positive"
+    ],
+    "MAX_SEQUENCE_LEN": 100
+}
