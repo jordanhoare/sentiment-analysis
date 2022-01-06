@@ -1,0 +1,99 @@
+<!-- https://semantic-ui.com/introduction/getting-started.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<script>
+    $(document).ready(function () {
+        $("#predict_phrase").click(function () {
+            $('.ui.modal').modal('show');
+        });
+
+        $("#reload").click(function () {
+            location.href = "/";
+        });
+
+        $("#save").click(function () {
+
+            var phraseareaContent = $("#phrases").val();
+            var phrases = phraseareaContent.split("\n");
+
+            for (var i = 0; i < phrases.length; ++i) {
+                console.log(phrases[i]);
+
+                $.ajax({
+                    url: '/stock',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ "phrase": phrases[i] }),
+                    dataType: 'json'
+                });
+            }
+            $('.ui.modal').modal('hide');
+            location.href = "/";
+        });
+    });
+</script>
+
+<div class="ui hidden divider"></div>
+
+<div class="ui items">
+    <div class="item">
+
+        <div class="middle aligned content">
+            <div class="ui transparent input">
+                <input type="phrase" placeholder="Start typing here...">
+              </div>
+        </div>
+
+        <div class="middle aligned content">
+            <div class="header">Write a message to test it's sentiment...</div>
+            <div class="ui clearing divider"></div>
+            <div class="meta">
+                <span>A real-time sentiment analysis application.
+                </span>
+            </div>
+            <div class="ui hidden divider"></div>
+            <div class="extra">
+                <button id="predict_phrase" class="ui primary button">
+                    Predict
+                </button>
+                <button class="ui button">
+                    Clear
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="ui hidden divider"></div>
+
+<div>
+
+    <table class="ui unstackable table">
+        <thead>
+            <tr>
+                <th>Phrase</th>
+                <th>Sentiment</th>
+                <th>Confidence</th>
+                <th>Negative</th>
+                <th>Neutral</th>
+                <th>Positive</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for phrase in phrases %}
+            <tr>
+                <td>{{ phrase.phrase }}</td>
+                <td>{{ phrase.sentiment }}</td>
+                <td>{{ phrase.confidence }}</td>
+                <td>{{ phrase.negative }}</td>
+                <td>{{ phrase.peutral }}</td>
+                <td>{{ phrase.positive }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
