@@ -58,10 +58,20 @@ def predict_phrase_sentiment(id: int):
 
 # Routes
 @app.get("/", response_class=HTMLResponse)
-def dashboard(request: Request):
+def dashboard(
+    request: Request,
+    db: Session = Depends(get_db),
+):
+    """
+    ,
+    """
+    phrases = db.query(Phrases).all()
     return templates.TemplateResponse(
         "home.html",
-        {"request": request},
+        {
+            "request": request,
+            "phrase": phrases,
+        },
     )
 
 

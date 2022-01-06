@@ -62,16 +62,15 @@
 <div class="ui hidden divider"></div>
 
 <div>
-
     <table class="ui unstackable table">
         <thead>
             <tr>
                 <th>Phrase</th>
                 <th>Sentiment</th>
                 <th>Confidence</th>
+                <th>Positive</th>
                 <th>Negative</th>
                 <th>Neutral</th>
-                <th>Positive</th>
             </tr>
         </thead>
         <tbody>
@@ -80,9 +79,9 @@
                 <td>{{ phrase.phrase }}</td>
                 <td>{{ phrase.sentiment }}</td>
                 <td>{{ phrase.confidence }}</td>
-                <td>{{ phrase.negative }}</td>
-                <td>{{ phrase.peutral }}</td>
                 <td>{{ phrase.positive }}</td>
+                <td>{{ phrase.negative }}</td>
+                <td>{{ phrase.neutral }}</td>
             </tr>
             {% endfor %}
         </tbody>
