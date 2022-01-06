@@ -29,8 +29,8 @@ def get_db():
 class PhraseRequest(BaseModel):
     phrase: str
     #    probabilities: Dict[str, float]
-    sentiment: str
-    confidence: float
+    # sentiment: str
+    # confidence: float
 
 
 # FastAPI
