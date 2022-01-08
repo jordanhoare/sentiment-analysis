@@ -26,11 +26,14 @@ def get_db():
 
 
 # Pydantic classes
-class PhraseResponse(BaseModel):
+class SentimentRequest(BaseModel):
     phrase: str
-    # probabilities: Dict[str, float]
-    # sentiment: str
-    # confidence: float
+
+
+class SentimentResponse(BaseModel):
+    probabilities: Dict[str, float]
+    sentiment: str
+    confidence: float
 
 
 # FastAPI
@@ -44,16 +47,19 @@ templates = Jinja2Templates(
 )
 
 # NLP classification background_task
-def predict_phrase_sentiment(id: int):
+def predict_phrase_sentiment(
+    id: int,
+):
     """
-    ,
+    ,NLP_classifier: Classifier = Depends(get_model), ^^
     """
     db = SessionLocal()
     phrase = db.query(Phrases).filter(Phrases.id == id).first()
-
-    phrase.sentiment = (
-        "positive"  ### < throw classification predict here (use huggingface.py)
-    )
+    # sentiment, confidence, probabilities = NLP_classifier.predict(phrase)
+    # phrase.probabilities = probabilities
+    # phrase.confidence = confidence
+    # phrase.sentiment = sentiment
+    phrase.sentiment = "sentiment"
     db.add(phrase)
     db.commit()
 
@@ -72,14 +78,14 @@ def dashboard(
         "home.html",
         {
             "request": request,
-            "phrase": phrases,
+            "phrases": phrases,
         },
     )
 
 
 @app.post("/phrase")
 def create_phrase(
-    phrase_request: PhraseResponse,
+    phrase_request: SentimentRequest,
     background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
 ):

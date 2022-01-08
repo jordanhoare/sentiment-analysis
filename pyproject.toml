@@ -21,6 +21,8 @@ httpie = "^2.6.0"
 transformers = "^4.15.0"
 SQLAlchemy = "^1.4.29"
 Jinja2 = "^3.0.3"
+sentencepiece = "^0.1.96"
+protobuf = "^3.19.1"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^21.12b0", allow-prereleases = true}

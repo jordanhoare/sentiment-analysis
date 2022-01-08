@@ -12,7 +12,7 @@ from torch import nn
 from transformers import BertModel, BertTokenizer
 
 # Open model config
-with open("sentiment_analysis/nlp_classifier/config.json") as json_file:
+with open("nlp_classifier/config_file.json") as json_file:
     config = json.load(json_file)
 
 
@@ -86,5 +86,7 @@ class BertClassifier:
     #     )
 
 
-def get_classifier():
-    return BertClassifier()
+classifier_predict = BertClassifier()
+
+
+classifier_predict("text")
