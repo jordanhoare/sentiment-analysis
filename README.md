@@ -2,7 +2,8 @@
 
 [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://jordanhoare.com/stock-app) [![GitHub Stars](https://img.shields.io/github/stars/jordanhoare/sentiment-analysis.svg)](https://github.com/jordanhoare/sentiment-analysis/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/jordanhoare/sentiment-analysis.svg)](https://github.com/jordanhoare/sentiment-analysis/issues) [![Current Version](https://img.shields.io/badge/version-0.0.2-green.svg)](https://github.com/jordanhoare/sentiment-analysis) 
 
-![Alt Text](https://giphy.com/embed/G676IQ2MTsKtMucYA0)
+![Alt Text](https://media.giphy.com/media/G676IQ2MTsKtMucYA0/giphy.gif)
+
 
 Utilises a pretrained BERT-cased model to predict sentiment (negative, neutral, and positive) on inputted text. 
 
