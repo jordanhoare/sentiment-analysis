@@ -5,7 +5,7 @@ from config import settings
 from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
-from nlp_classifier.two_classifier import BertClassifier
+from nlp_classifier.nlp_classifier import BertClassifier
 from pydantic import BaseModel
 from pydantic.main import BaseModel
 from sqlalchemy.orm import Session
@@ -51,18 +51,17 @@ def predict_phrase_sentiment(
     id: int,
 ):
     """
-    ,NLP_classifier: Classifier = Depends(get_model), ^^
+    -------
     """
     db = SessionLocal()
     phrase = db.query(Phrases).filter(Phrases.id == id).first()
-    positive_score, neutral_score, negative_score = BertClassifier(phrase).return_list()
+    sentiment, positive_score, neutral_score, negative_score = BertClassifier(
+        phrase.phrase
+    ).return_list()
+    phrase.sentiment = sentiment
     phrase.positive = positive_score
-    # phrase.negative = negative_score
-    # phrase.neutral = neutral_score
-    # phrase.probabilities = probabilities
-    # phrase.confidence = confidence
-    # phrase.sentiment = sentiment
-    phrase.sentiment = "sentiment"
+    phrase.negative = negative_score
+    phrase.neutral = neutral_score
     db.add(phrase)
     db.commit()
 
@@ -74,7 +73,7 @@ def dashboard(
     db: Session = Depends(get_db),
 ):
     """
-    ,
+    -------
     """
     phrases = db.query(Phrases).all()
     return templates.TemplateResponse(
