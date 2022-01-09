@@ -1,4 +1,3 @@
-import asyncio
 from typing import Dict
 
 from api import models
@@ -6,6 +5,7 @@ from config import settings
 from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from nlp_classifier.two_classifier import BertClassifier
 from pydantic import BaseModel
 from pydantic.main import BaseModel
 from sqlalchemy.orm import Session
@@ -55,7 +55,10 @@ def predict_phrase_sentiment(
     """
     db = SessionLocal()
     phrase = db.query(Phrases).filter(Phrases.id == id).first()
-    # sentiment, confidence, probabilities = NLP_classifier.predict(phrase)
+    positive_score, neutral_score, negative_score = BertClassifier(phrase).return_list()
+    phrase.positive = positive_score
+    # phrase.negative = negative_score
+    # phrase.neutral = neutral_score
     # phrase.probabilities = probabilities
     # phrase.confidence = confidence
     # phrase.sentiment = sentiment
