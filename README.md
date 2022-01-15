@@ -9,8 +9,6 @@ A python app that utilises a transformer-based BERT model for natural language p
 
 </br>
 
-</br>
-
 ## Project check-list 
 - [x] init project using pyenv, poetry
 - [ ] SQLite & object related mapping
@@ -33,7 +31,6 @@ To demo this application: clone the repo, navigate to the project folder and run
 
 </br>
 
-</br>
 
 <p align="center">
     <a href="https://www.linkedin.com/in/jordan-hoare/">
@@ -46,5 +43,3 @@ To demo this application: clone the repo, navigate to the project folder and run
         <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
     </a>&nbsp;&nbsp;
 </p>
-
-</br>
