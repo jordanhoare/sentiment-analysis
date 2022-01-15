@@ -9,7 +9,7 @@ A python app that utilises a transformer-based BERT model for natural language p
 
 </br>
 
-## Project check-list 
+## Project Features
 - [x] init project using pyenv, poetry
 - [ ] SQLite & object related mapping
 - [ ] jQuery post to db
