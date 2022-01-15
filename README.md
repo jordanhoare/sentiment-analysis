@@ -15,7 +15,7 @@ A python app that utilises a transformer-based BERT model for natural language p
 - [x] connect to SQLite with sqlalchemy object related mapping
 - [x] add SemanticUI & JavaScript interactions
 - [x] jQuery to post on phrase submission to db
-
+ 
 </br>
 
 ## Requirements (Python)  
