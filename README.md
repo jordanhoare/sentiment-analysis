@@ -1,5 +1,5 @@
-## Sentiment Classifier
-
+Sentiment Classifier
+============
 [![GitHub Stars](https://img.shields.io/github/stars/jordanhoare/sentiment-analysis.svg)](https://github.com/jordanhoare/sentiment-analysis/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/jordanhoare/sentiment-analysis.svg)](https://github.com/jordanhoare/sentiment-analysis/issues) [![Current Version](https://img.shields.io/badge/version-0.0.2-green.svg)](https://github.com/jordanhoare/sentiment-analysis) 
 
 ![Alt Text](https://media.giphy.com/media/G676IQ2MTsKtMucYA0/giphy.gif)
@@ -9,11 +9,12 @@ A python app that utilises a transformer-based BERT model for natural language p
 
 </br>
 
+
 ## Project Features
-- [x] init project using pyenv, poetry
-- [ ] SQLite & object related mapping
-- [ ] jQuery post to db
-- [ ] 
+- [x] instantiate the project using pyenv, poetry
+- [x] connect to SQLite with sqlalchemy object related mapping
+- [x] add SemanticUI & JavaScript interactions
+- [x] jQuery to post on phrase submission to db
 
 </br>
 
