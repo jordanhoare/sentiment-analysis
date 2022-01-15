@@ -1,22 +1,27 @@
-## BERT Cased Sentiment Analysis
+## Sentiment Classifier
 
-[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://jordanhoare.com/stock-app) [![GitHub Stars](https://img.shields.io/github/stars/jordanhoare/sentiment-analysis.svg)](https://github.com/jordanhoare/sentiment-analysis/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/jordanhoare/sentiment-analysis.svg)](https://github.com/jordanhoare/sentiment-analysis/issues) [![Current Version](https://img.shields.io/badge/version-0.0.2-green.svg)](https://github.com/jordanhoare/sentiment-analysis) 
+[![GitHub Stars](https://img.shields.io/github/stars/jordanhoare/sentiment-analysis.svg)](https://github.com/jordanhoare/sentiment-analysis/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/jordanhoare/sentiment-analysis.svg)](https://github.com/jordanhoare/sentiment-analysis/issues) [![Current Version](https://img.shields.io/badge/version-0.0.2-green.svg)](https://github.com/jordanhoare/sentiment-analysis) 
 
 ![Alt Text](https://media.giphy.com/media/G676IQ2MTsKtMucYA0/giphy.gif)
 
 
-Utilises a pretrained BERT-cased model to predict sentiment (negative, neutral, and positive) on inputted text. 
+A python app that utilises a transformer-based BERT model for natural language processing (NLP).  The classifier returns the sentiment (negative, neutral, and positive) of user inputted text.
+
 
 ## Project check-list 
 - [x] init project using pyenv, poetry
 - [ ] SQLite & object related mapping
 - [ ] jQuery post to db
 - [ ] 
-- [ ] 
-- [ ] init BertModel
 
-## Local
-Clone this repo to your desktop and run `_______` to install all the dependencies.
+
+## Requirements (Python)  
+- Pyenv
+- Poetry 
+
+
+## Installation
+To demo this application: clone the repo, navigate to the project folder and run `poetry shell` to open the venv.  Run the ` __main__.py ` file to start the server.  You can then access the web UI @ `http://127.0.0.1:8000/`
 
 
 ## Links
@@ -30,8 +35,4 @@ Clone this repo to your desktop and run `_______` to install all the dependencie
     <a href="mailto:jordanhoare0@gmail.com">
         <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
     </a>&nbsp;&nbsp;
-    <a href="https://www.facebook.com/profile.php?id=100011746816986">
-        <img
-            src="https://img.shields.io/badge/facebook-%231877F2.svg?&style=for-the-badge&logo=facebook&logoColor=white" />
-    </a>
 </p>
