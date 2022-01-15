@@ -7,6 +7,9 @@
 
 A python app that utilises a transformer-based BERT model for natural language processing (NLP).  The classifier returns the sentiment (negative, neutral, and positive) of user inputted text.
 
+</br>
+
+</br>
 
 ## Project check-list 
 - [x] init project using pyenv, poetry
@@ -14,11 +17,13 @@ A python app that utilises a transformer-based BERT model for natural language p
 - [ ] jQuery post to db
 - [ ] 
 
+</br>
 
 ## Requirements (Python)  
 - Pyenv
 - Poetry 
 
+</br>
 
 ## Installation
 To demo this application: clone the repo, navigate to the project folder and run `poetry shell` to open the venv.  Run the ` __main__.py ` file to start the server.  You can then access the web UI @ `http://127.0.0.1:8000/`
@@ -41,3 +46,5 @@ To demo this application: clone the repo, navigate to the project folder and run
         <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
     </a>&nbsp;&nbsp;
 </p>
+
+</br>
