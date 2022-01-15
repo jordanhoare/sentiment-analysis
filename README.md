@@ -24,8 +24,11 @@ A python app that utilises a transformer-based BERT model for natural language p
 To demo this application: clone the repo, navigate to the project folder and run `poetry shell` to open the venv.  Run the ` __main__.py ` file to start the server.  You can then access the web UI @ `http://127.0.0.1:8000/`
 
 
+</br>
 
-###
+</br>
+
+</br>
 
 <p align="center">
     <a href="https://www.linkedin.com/in/jordan-hoare/">
